@@ -111,6 +111,33 @@ const geometriesSlice = (three = window.THREE) => {
       // update real position of each vertex! (not in 2d)
       this.setAttribute( 'position', new three.Float32BufferAttribute( positions, 3 ) );
       this.vertices = points; // legacy code to compute normals int he SliceHelper
+
+      // FIX for GitHub issue FNNDSC/ami#392: Use axis-aligned normals for MPR
+      if (direction && points.length >= 3) {
+        // Snap direction to nearest axis for proper MPR sampling
+        const absX = Math.abs(direction.x);
+        const absY = Math.abs(direction.y);
+        const absZ = Math.abs(direction.z);
+
+        const snappedDir = {x: 0, y: 0, z: 0};
+        if (absX >= absY && absX >= absZ) {
+          snappedDir.x = direction.x > 0 ? 1 : -1;
+        } else if (absY >= absX && absY >= absZ) {
+          snappedDir.y = direction.y > 0 ? 1 : -1;
+        } else {
+          snappedDir.z = direction.z > 0 ? 1 : -1;
+        }
+
+        // Create normal attribute using the SNAPPED direction
+        const normalArray = new Float32Array(points.length * 3);
+        for (let i = 0; i < points.length; i++) {
+          normalArray[i * 3] = snappedDir.x;
+          normalArray[i * 3 + 1] = snappedDir.y;
+          normalArray[i * 3 + 2] = snappedDir.z;
+        }
+
+        this.setAttribute('normal', new three.Float32BufferAttribute(normalArray, 3));
+      }
     }
   };
 };

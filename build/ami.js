@@ -26869,7 +26869,7 @@ module.exports = g;
 /*! exports provided: name, version, main, keywords, author, license, repository, config, lint-staged, prettier, sideEffects, dependencies, scripts, devDependencies, engines, default */
 /***/ (function(module) {
 
-module.exports = {"name":"ami.js","version":"0.32.0","main":"build/ami.js","keywords":["ami","ami.js","three.js","webgl","dicom","nifti","awesome","medical","imaging","xtk","nrrd","vtk","stl","trk"],"author":{"name":"Nicolas Rannou","email":"nicolas@eunate.ch","url":"https://eunate.ch"},"license":"Apache-2.0","repository":{"type":"git","url":"https://fnndsc.github.io/ami"},"config":{"gaKey":"UA-39303022-3","babel":"--module-bind js=babel-loader --colors --display-error-details"},"lint-staged":{"{{src/**,examples/**, lessons/**}/,}.{js,jsx,json,css,ts,tsx}":["prettier --write","git add"]},"prettier":{"printWidth":100,"singleQuote":true,"trailingComma":"es5","overrides":[{"files":"*.css","options":{"useTabs":false,"tabWidth":2}}]},"sideEffects":false,"dependencies":{"OpenJPEG.js":"joedrago/openjpeg#master","dicom-parser":"1.8.1","image-JPEG2000":"ReflexionMed/image-JPEG2000#master","jpeg-lossless-decoder-js":"1.2.3","math-float32-to-binary-string":"^1.0.0","nifti-reader-js":"v0.5.3","nrrd-js":"^0.2.1","pako":"1.0.1","three":"latest"},"scripts":{"precommit":"lint-staged","tslint-check":"tslint-config-prettier-check ./tslint.json","check-codestyle":"prettier-check 'src/**/*.{js,jsx,json,css,ts,tsx}'","fix-all-code-style":"prettier --write '{{src/**,examples/**, lessons/**}/,}*.{js,jsx,json,css,ts,tsx}'","build:ami":"webpack --config webpack.config.build.js --display-error-details","build:ami:prod":"cross-env NODE_ENV=production yarn build:ami","build:clean":"rimraf -rf build/*","build:clean:hot":"rimraf -rf build/*.hot-update.*","dev:ami":"webpack --config webpack.config.build.js --hot --watch --colors","dist:ami":"yarn build:clean && yarn build:ami && yarn build:ami:prod && yarn doc","dist:examples":"node ./scripts/buildDist.js && node ./scripts/router.js examples deploy","dist:clean":"rimraf -rf dist/*","analyze:ami":"cross-env NODE_WEBPACK_ANALYZE=true yarn build:ami","analyze:ami:prod":"cross-env NODE_WEBPACK_ANALYZE=true yarn build:ami:prod","clean":"yarn build:clean && yarn dist:clean","example":"node ./scripts/router.js examples","gen:index:examples":"node ./scripts/genIndexFiles.js examples","gen:index:examples:ga":"cross-env NODE_GA=true node ./scripts/genIndexFiles.js examples","test":"karma start","testExamples":"yarn dist:clean && yarn dist:examples","doc":"jsdoc -p -r -R README.md -c jsdoc.json -d dist/doc src","ami":"yarn dist:ami && yarn test","deploy":"yarn dist:clean && yarn build:clean && yarn dist:ami && yarn dist:examples && gh-pages -d dist"},"devDependencies":{"@types/jasmine":"^3.3.2","@types/node":"^10.11.3","@types/three":"^0.93.13","babel-cli":"latest","babel-core":"^6.26.0","babel-loader":"^7.1.2","babel-preset-env":"^1.6.0","babel-runtime":"^6.26.0","compression-webpack-plugin":"^1.0.1","cross-env":"^3.2.3","gh-pages":"^1.2.0","husky":"^1.1.3","jasmine-core":"^2.99.1","jsdoc":"jsdoc3/jsdoc#master","karma":"^2.0.5","karma-chrome-launcher":"^2.2.0","karma-jasmine":"^1.1.2","karma-sinon":"^1.0.5","karma-spec-reporter":"^0.0.32","karma-webpack":"3.0.0","lint-staged":"^8.0.4","live-server":"^1.1.0","node-pre-gyp":"^0.10.0","prettier":"^1.15.1","prettier-check":"^2.0.0","puppeteer":"^1.6.1","rimraf":"^2.6.1","rollup-plugin-node-builtins":"^2.1.2","shelljs":"^0.8.2","sinon":"^2.0.0","ts-loader":"^5.2.1","tslint":"^5.11.0","tslint-config-prettier":"^1.15.0","tslint-loader":"^3.6.0","typescript":"^3.1.1","uglifyjs-webpack-plugin":"^1.2.7","webpack":"^4.16.3","webpack-bundle-analyzer":"^2.9.0","webpack-cli":"^3.1.0","webpack-dev-server":"^3.1.5","webpack-watch-livereload-plugin":"^0.0.1"},"engines":{"node":">=6.9.0"}};
+module.exports = {"name":"@froilan-miranda/ami.js","version":"0.32.1","main":"build/ami.js","keywords":["ami","ami.js","three.js","webgl","dicom","nifti","awesome","medical","imaging","xtk","nrrd","vtk","stl","trk"],"author":{"name":"Nicolas Rannou","email":"nicolas@eunate.ch","url":"https://eunate.ch"},"license":"Apache-2.0","repository":{"type":"git","url":"https://fnndsc.github.io/ami"},"config":{"gaKey":"UA-39303022-3","babel":"--module-bind js=babel-loader --colors --display-error-details"},"lint-staged":{"{{src/**,examples/**, lessons/**}/,}.{js,jsx,json,css,ts,tsx}":["prettier --write","git add"]},"prettier":{"printWidth":100,"singleQuote":true,"trailingComma":"es5","overrides":[{"files":"*.css","options":{"useTabs":false,"tabWidth":2}}]},"sideEffects":false,"dependencies":{"OpenJPEG.js":"joedrago/openjpeg#master","dicom-parser":"1.8.1","image-JPEG2000":"ReflexionMed/image-JPEG2000#master","jpeg-lossless-decoder-js":"1.2.3","math-float32-to-binary-string":"^1.0.0","nifti-reader-js":"v0.5.3","nrrd-js":"^0.2.1","pako":"1.0.1","three":"latest"},"scripts":{"precommit":"lint-staged","tslint-check":"tslint-config-prettier-check ./tslint.json","check-codestyle":"prettier-check 'src/**/*.{js,jsx,json,css,ts,tsx}'","fix-all-code-style":"prettier --write '{{src/**,examples/**, lessons/**}/,}*.{js,jsx,json,css,ts,tsx}'","build:ami":"webpack --config webpack.config.build.js --display-error-details","build:ami:prod":"cross-env NODE_ENV=production yarn build:ami","build:clean":"rimraf -rf build/*","build:clean:hot":"rimraf -rf build/*.hot-update.*","dev:ami":"webpack --config webpack.config.build.js --hot --watch --colors","dist:ami":"yarn build:clean && yarn build:ami && yarn build:ami:prod && yarn doc","dist:examples":"node ./scripts/buildDist.js && node ./scripts/router.js examples deploy","dist:clean":"rimraf -rf dist/*","analyze:ami":"cross-env NODE_WEBPACK_ANALYZE=true yarn build:ami","analyze:ami:prod":"cross-env NODE_WEBPACK_ANALYZE=true yarn build:ami:prod","clean":"yarn build:clean && yarn dist:clean","example":"node ./scripts/router.js examples","gen:index:examples":"node ./scripts/genIndexFiles.js examples","gen:index:examples:ga":"cross-env NODE_GA=true node ./scripts/genIndexFiles.js examples","test":"karma start","testExamples":"yarn dist:clean && yarn dist:examples","doc":"jsdoc -p -r -R README.md -c jsdoc.json -d dist/doc src","ami":"yarn dist:ami && yarn test","deploy":"yarn dist:clean && yarn build:clean && yarn dist:ami && yarn dist:examples && gh-pages -d dist"},"devDependencies":{"@types/jasmine":"^3.3.2","@types/node":"^10.11.3","@types/three":"^0.93.13","babel-cli":"latest","babel-core":"^6.26.0","babel-loader":"^7.1.2","babel-preset-env":"^1.6.0","babel-runtime":"^6.26.0","compression-webpack-plugin":"^1.0.1","cross-env":"^3.2.3","gh-pages":"^1.2.0","husky":"^1.1.3","jasmine-core":"^2.99.1","jsdoc":"jsdoc3/jsdoc#master","karma":"^2.0.5","karma-chrome-launcher":"^2.2.0","karma-jasmine":"^1.1.2","karma-sinon":"^1.0.5","karma-spec-reporter":"^0.0.32","karma-webpack":"3.0.0","lint-staged":"^8.0.4","live-server":"^1.1.0","node-pre-gyp":"^0.10.0","prettier":"^1.15.1","prettier-check":"^2.0.0","puppeteer":"^1.6.1","rimraf":"^2.6.1","rollup-plugin-node-builtins":"^2.1.2","shelljs":"^0.8.2","sinon":"^2.0.0","ts-loader":"^5.2.1","tslint":"^5.11.0","tslint-config-prettier":"^1.15.0","tslint-loader":"^3.6.0","typescript":"^3.1.1","uglifyjs-webpack-plugin":"^1.2.7","webpack":"^4.16.3","webpack-bundle-analyzer":"^2.9.0","webpack-cli":"^3.1.0","webpack-dev-server":"^3.1.5","webpack-watch-livereload-plugin":"^0.0.1"},"engines":{"node":">=6.9.0"}};
 
 /***/ }),
 
@@ -31471,8 +31471,35 @@ var geometriesSlice = function geometriesSlice() {
       _this.type = 'SliceBufferGeometry';
 
       // update real position of each vertex! (not in 2d)
-      _this.addAttribute('position', new three.Float32BufferAttribute(positions, 3));
+      _this.setAttribute('position', new three.Float32BufferAttribute(positions, 3));
       _this.vertices = points; // legacy code to compute normals int he SliceHelper
+
+      // FIX for GitHub issue FNNDSC/ami#392: Use axis-aligned normals for MPR
+      if (direction && points.length >= 3) {
+        // Snap direction to nearest axis for proper MPR sampling
+        var absX = Math.abs(direction.x);
+        var absY = Math.abs(direction.y);
+        var absZ = Math.abs(direction.z);
+
+        var snappedDir = { x: 0, y: 0, z: 0 };
+        if (absX >= absY && absX >= absZ) {
+          snappedDir.x = direction.x > 0 ? 1 : -1;
+        } else if (absY >= absX && absY >= absZ) {
+          snappedDir.y = direction.y > 0 ? 1 : -1;
+        } else {
+          snappedDir.z = direction.z > 0 ? 1 : -1;
+        }
+
+        // Create normal attribute using the SNAPPED direction
+        var normalArray = new Float32Array(points.length * 3);
+        for (var _i = 0; _i < points.length; _i++) {
+          normalArray[_i * 3] = snappedDir.x;
+          normalArray[_i * 3 + 1] = snappedDir.y;
+          normalArray[_i * 3 + 2] = snappedDir.z;
+        }
+
+        _this.setAttribute('normal', new three.Float32BufferAttribute(normalArray, 3));
+      }
       return _this;
     }
 
@@ -31651,11 +31678,11 @@ var helpersBorder = function helpersBorder() {
       var positions = new Float32Array((nbOfVertices + 1) * 3);
       positions.set(this._helpersSlice.geometry.attributes.position.array, 0);
       positions.set(this._helpersSlice.geometry.vertices[0].toArray(), nbOfVertices * 3);
-      this._geometry.addAttribute('position', new three.Float32BufferAttribute(positions, 3));
+      this._geometry.setAttribute('position', new three.Float32BufferAttribute(positions, 3));
 
       this._mesh = new three.Line(this._geometry, this._material);
       if (this._helpersSlice.aabbSpace === 'IJK') {
-        this._mesh.applyMatrix(this._helpersSlice.stack.ijk2LPS);
+        this._mesh.applyMatrix4(this._helpersSlice.stack.ijk2LPS);
       }
       this._mesh.visible = this._visible;
 
@@ -31793,7 +31820,7 @@ var helpersBoundingBox = function helpersBoundingBox() {
 
       // Geometry
       var geometry = new three.BoxGeometry(dimensions.x, dimensions.y, dimensions.z);
-      geometry.applyMatrix(new three.Matrix4().makeTranslation(halfDimensions.x + offset.x, halfDimensions.y + offset.y, halfDimensions.z + offset.z));
+      geometry.applyMatrix4(new three.Matrix4().makeTranslation(halfDimensions.x + offset.x, halfDimensions.y + offset.y, halfDimensions.z + offset.z));
       this._geometry = geometry;
 
       // Material
@@ -31802,7 +31829,7 @@ var helpersBoundingBox = function helpersBoundingBox() {
       });
 
       var mesh = new three.Mesh(this._geometry, null);
-      mesh.applyMatrix(this._stack.ijk2LPS);
+      mesh.applyMatrix4(this._stack.ijk2LPS);
       mesh.visible = this._visible;
       this._meshStack = mesh;
 
@@ -31935,7 +31962,7 @@ var helpersContour = function helpersContour() {
     _class.prototype._create = function _create() {
       this._prepareMaterial();
       this._mesh = new three.Mesh(this._geometry, this._material);
-      this._mesh.applyMatrix(this._stack._ijk2LPS);
+      this._mesh.applyMatrix4(this._stack._ijk2LPS);
       this.add(this._mesh);
     };
 
@@ -33432,7 +33459,7 @@ var helpersSlice = function helpersSlice() {
       // create the mesh!
       this._mesh = new three.Mesh(this._geometry, this._material);
       if (this._aaBBspace === 'IJK') {
-        this._mesh.applyMatrix(this._stack.ijk2LPS);
+        this._mesh.applyMatrix4(this._stack.ijk2LPS);
       }
 
       this._mesh.visible = this._visible;
@@ -34533,7 +34560,7 @@ var helpersVolumeRendering = function helpersVolumeRendering() {
       var centerLPS = this._stack.worldCenter();
 
       this._geometry = new three.BoxGeometry(worldBBox[1] - worldBBox[0], worldBBox[3] - worldBBox[2], worldBBox[5] - worldBBox[4]);
-      this._geometry.applyMatrix(new three.Matrix4().makeTranslation(centerLPS.x, centerLPS.y, centerLPS.z));
+      this._geometry.applyMatrix4(new three.Matrix4().makeTranslation(centerLPS.x, centerLPS.y, centerLPS.z));
     };
 
     _class.prototype.dispose = function dispose() {
@@ -39178,8 +39205,13 @@ var ParsersDicom = function (_ParsersVolume) {
     var rgbData = null;
     var photometricInterpretation = this.photometricInterpretation();
     var planarConfiguration = this.planarConfiguration();
+    if (planarConfiguration === null) {
+      planarConfiguration = 0;
+      window.console.log('Planar Configuration was not set and was defaulted to  0');
+    }
 
     var interpretAsRGB = this._interpretAsRGB(photometricInterpretation);
+
     if (interpretAsRGB && planarConfiguration === 0) {
       // ALL GOOD, ALREADY ORDERED
       // planar or non planar planarConfiguration
